@@ -1,54 +1,57 @@
-# React + TypeScript + Vite
+# 💳 Hosted Payment Page (HPP) – Sandbox React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern React application built with Vite and TypeScript for simulating a hosted payment flow using BVNK's sandbox API. The UI matches the Figma design spec and handles quote acceptance, currency selection, crypto payment details, and expiry states.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- ⚛️ React + Vite + TypeScript
+- 💨 TailwindCSS for styling
+- 🧩 React Router v6
+- 🧪 Vitest + React Testing Library (tests included)
+- 📦 Axios for API requests
+- 🧠 Clean code structure with reusable components
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 📸 Screens
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Home** – Input a quote UUID to start
+- **Accept Quote** – View quote, select currency, confirm
+- **Pay Quote** – Copy payment details, view timer and QR code
+- **Expired** – Handles expired quotes with redirect
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🔧 Getting Started
+
+### 1. Clone and run the repo
+```bash
+
+cd hpp-app
+
+### Install Dependencies
+
+npm install
+
+### Run The application
+
+npm run dev
+
+🛠 Manual Setup
+🔑 Get a UUID
+To start a flow:
+
+Open Postman and import the sandbox Postman collection.
+
+Use Create Payment in the sandbox environment.
+
+Copy the UUID from the API response.
+
+Paste it on the home page input to simulate the flow.
+
+### Tests
+
+npm run test
+
