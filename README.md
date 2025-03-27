@@ -1,6 +1,6 @@
 # 💳 Hosted Payment Page (HPP) – Sandbox React App
 
-This is a modern React application built with Vite and TypeScript for simulating a hosted payment flow using BVNK's sandbox API. The UI matches the Figma design spec and handles quote acceptance, currency selection, crypto payment details, and expiry states.
+This is a modern React application built with Vite and TypeScript for simulating a hosted payment flow using BVNK's sandbox API.
 
 ---
 
