@@ -1,4 +1,3 @@
-// src/components/PaymentDetails.tsx
 import React from 'react';
 import { QuoteResponse } from '../types/api';
 import useCountdown from '../hooks/useCountdown';

@@ -26,7 +26,6 @@ const AcceptQuote: React.FC = () => {
     fetchQuote();
   }, [fetchQuote]);
 
-  // Auto-refresh on expiry
   useEffect(() => {
     if (!quote) return;
     const expiry = new Date(quote.acceptanceExpiryDate).getTime();
@@ -53,15 +52,26 @@ const AcceptQuote: React.FC = () => {
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Accept Quote</h1>
-      {loading && <div>Loading...</div>}
-      {!loading && quote && (
-        <>
-          <CurrencySelector selected={selectedCurrency} onChange={handleCurrencyChange} />
-          <QuoteSummary quote={quote} onConfirm={handleConfirm} />
-        </>
-      )}
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 px-4">
+      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+        <h1 className="text-xl font-semibold text-gray-900 mb-6 text-center">Accept Quote</h1>
+        {loading && <div className="text-gray-600 text-center">Loading...</div>}
+        {!loading && quote && (
+          <>
+            <div className="text-center mb-6">
+              <div className="text-sm text-gray-500 mb-1">Merchant Display Name</div>
+              <div className="text-3xl font-bold">
+                {quote.paidCurrency.amount} {quote.paidCurrency.currency}
+              </div>
+              <div className="text-xs text-gray-500 mt-1">
+                Reference: <span className="font-semibold">REF292970</span>
+              </div>
+            </div>
+            <CurrencySelector selected={selectedCurrency} onChange={handleCurrencyChange} />
+            <QuoteSummary quote={quote} onConfirm={handleConfirm} />
+          </>
+        )}
+      </div>
     </div>
   );
 };

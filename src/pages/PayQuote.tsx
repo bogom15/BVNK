@@ -19,11 +19,16 @@ const PayQuote: React.FC = () => {
   }, [uuid, navigate]);
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">
-        Pay with {quote?.paidCurrency.currency || ''}
-      </h1>
-      {quote && <PaymentDetails quote={quote} />}
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+      <div className="bg-white rounded-2xl shadow p-8 w-full max-w-md text-center">
+        <h1 className="text-xl font-semibold text-gray-900 mb-2">
+          Pay with {quote?.paidCurrency.currency}
+        </h1>
+        <p className="text-sm text-gray-600 mb-6">
+          To complete this payment send the amount due to the BTC address provided below.
+        </p>
+        {quote && <PaymentDetails quote={quote} />}
+      </div>
     </div>
   );
 };
